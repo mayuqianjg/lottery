@@ -169,6 +169,7 @@ contract LotteryDraw {
             tickets[i] = msg.sender;
         }
         current_num_of_people=new_num_of_people;
+        total_funds += total_price;
         emit Deposit(msg.sender, total_price);
      }
     
