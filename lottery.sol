@@ -182,6 +182,10 @@ contract LotteryDraw {
         address winner = tickets[randNonce];
         winning_addrs.push(winner);
         current_round = current_round +1;
+        for (uint i=0; i<current_num_of_people; i++) {
+            tickets[i] = address(0);
+        }
+        current_num_of_people = 0;
         _payOut(winner);
     }
     
